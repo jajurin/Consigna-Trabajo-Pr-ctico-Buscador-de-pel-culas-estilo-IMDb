@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import MovieCard from "./MovieCard";
 import api from "./api";
 import Loading from "./Loader";
 function MovieList({busqueda}){
@@ -13,20 +14,23 @@ function MovieList({busqueda}){
             setLoading(false)
         })
         .catch((error) =>{
-            console.error('error al cargar los peliculas: ', error)
+            console.error('error al cargar los pelis: ', error)
             setLoading(false)
         })
     }else{
     
-
+if(busqueda.length > 2) {
     api.get(busqueda).then((response) => {
         setPeliculas(response.data.Search || [])
         setLoading(false)
     })
     .catch((error) => {
-        console.error('error al cargar las peliculas: ', error)
+        console.error('error al cargar las pelis: ', error)
         setLoading(false)
     })}
+
+}
+
 }, [busqueda])
     if (loading) return <Loading />
 
@@ -37,14 +41,8 @@ function MovieList({busqueda}){
                 {             
                   (peliculas.length === 0) ? <p>No se encontraron peliculas</p> :
                       peliculas.map((pelicula)=> (
-                        <li key={pelicula.imdbID}>
-                            <strong>
-                                {pelicula.Title} ({pelicula.Year}) ({pelicula.Type})
-                            </strong>
-                               <br />
-        <img src={pelicula.Poster} alt={pelicula.Title} />
-                        </li>
-                    ))
+                        <MovieCard key={pelicula.imdbID} pelicula={pelicula} />
+                      ))
                 }
             </ul>
         </div>
