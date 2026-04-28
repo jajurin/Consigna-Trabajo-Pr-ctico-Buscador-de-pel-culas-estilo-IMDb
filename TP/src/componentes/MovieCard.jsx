@@ -1,6 +1,7 @@
+import MovieDeatils from "./MovieDetails";
 function MovieCard({ pelicula }) {
     return (
-        <li key={pelicula.imdbID}>
+        <li key={pelicula.imdbID} onClick={<MovieDeatils />}>
             <strong>
                 {pelicula.Title} ({pelicula.Year}) ({pelicula.Type})
             </strong>

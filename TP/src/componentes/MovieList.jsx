@@ -41,7 +41,7 @@ if(busqueda.length > 2) {
                 {             
                   (peliculas.length === 0) ? <p>No se encontraron peliculas</p> :
                       peliculas.map((pelicula)=> (
-                        <MovieCard key={pelicula.imdbID} pelicula={pelicula} />
+                        <MovieCard key={pelicula.imdbID} pelicula={pelicula}/>
                       ))
                 }
             </ul>
