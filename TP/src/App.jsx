@@ -1,8 +1,14 @@
-import MovieList from "./componentes/MovieList"
+import { useState } from "react";
+import MovieList from "./componentes/MovieList";
+import SearchBar from "./componentes/SearchBar";
+
 function App() {
+  const [busqueda, setBusqueda] = useState("");
+
   return (
     <>
-      <MovieList />
+      <SearchBar busqueda={busqueda} setBusqueda={setBusqueda} />
+      <MovieList busqueda={busqueda} />
     </>
   );
 }

@@ -1,9 +1,9 @@
 
 function Loading(){
  
- return(<img src="assets/4461744.png" alt="" />
+ return( <div> Cargando... </div> )
 
- )
+ 
 
      
 }
