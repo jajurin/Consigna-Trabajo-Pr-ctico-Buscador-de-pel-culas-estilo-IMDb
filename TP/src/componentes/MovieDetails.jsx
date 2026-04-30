@@ -1,8 +1,12 @@
 
-    function MovieDeatils({pelicula}) {
+    function MovieDetails({ pelicula, setPeliculaElegida }) {
 
     return (
-<li>
+          <div>
+      <button onClick={() => setPeliculaElegida(null)}>
+        ← Volver
+      </button>
+      <li>
       <strong>
         {pelicula.Title} ({pelicula.Year})
       </strong>
@@ -19,6 +23,7 @@
       <p><b>Premios:</b> {pelicula.Awards}</p>
       <p><b>IMDb:</b> {pelicula.imdbRating}</p>
     </li>
+        </div>
     )
 }
-export default MovieDeatils
+export default MovieDetails
