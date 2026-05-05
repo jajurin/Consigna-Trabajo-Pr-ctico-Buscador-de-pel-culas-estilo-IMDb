@@ -1,8 +1,9 @@
 import { useEffect, useState } from "react"
-import MovieList from "./componentes/MovieList"
+import MovieList from "./componentes/MovieList/MovieList"
 import SearchBar from "./componentes/SearchBar"
 import api from "./componentes/api"
-
+import MovieDetails from "./componentes/MovieDetails"
+import "./App.css";
 function App() {
   const [busqueda, setBusqueda] = useState("")
   const [peliculas, setPeliculas] = useState([])
@@ -33,7 +34,7 @@ function App() {
   }
 
 return (
-  <>
+  <main>
 
     {!peliculaElegida && (
       <SearchBar busqueda={busqueda} setBusqueda={setBusqueda} />
@@ -42,7 +43,7 @@ return (
     {loading && <p>Cargando...</p>}
     {error && <p>{error}</p>}
 
-    {!peliculaElegida ? (  
+    {!peliculaElegida ? (
       <MovieList
         peliculas={peliculas}
         onSelect={handleSelectMovie}
@@ -53,7 +54,8 @@ return (
         setPeliculaElegida={setPeliculaElegida}
       />
     )}
-  </>
+
+  </main>
 )
 }
 

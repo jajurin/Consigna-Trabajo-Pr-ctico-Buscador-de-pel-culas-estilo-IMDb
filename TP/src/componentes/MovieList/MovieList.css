@@ -1,0 +1,8 @@
+ul {
+  display: flex;
+  flex-direction: row;
+  gap: 16px;
+  flex-wrap: wrap; /* opcional: baja a otra fila si no entra */
+  list-style: none;
+  padding: 0;
+}
