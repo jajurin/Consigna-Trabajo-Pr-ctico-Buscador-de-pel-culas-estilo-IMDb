@@ -2,7 +2,7 @@ import "./Loader.css";
 
 function Loading(){
  
- return( <div> 
+ return( <div className="DivLoader"> 
     <p>Cargando...</p> 
     </div> )
 

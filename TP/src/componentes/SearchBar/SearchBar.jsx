@@ -1,12 +1,24 @@
+import { useState } from "react";
 import "./SearchBar.css";
 
-function SearchBar({ busqueda, setBusqueda }) {
-    return (
-        <input
-            type="text" placeholder="Buscar pelicula" value={busqueda}
-            onChange={(e) => setBusqueda(e.target.value)}
-        />
-    )
+function SearchBar({ setBusqueda }) {
+  const [input, setInput] = useState("");
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    setBusqueda(input);
+  };
+
+  return (
+    <form onSubmit={handleSubmit}>
+      <input
+        type="text"
+        placeholder="Buscar pelicula"
+        value={input}
+        onChange={(e) => setInput(e.target.value)}
+      />
+    </form>
+  );
 }
 
 export default SearchBar;

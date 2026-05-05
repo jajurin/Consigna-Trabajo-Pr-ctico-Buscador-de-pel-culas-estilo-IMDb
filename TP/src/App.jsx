@@ -19,7 +19,7 @@ function App() {
     setError(null)
 
     const busquedaRealizada =
-      busqueda && busqueda.length > 2 ? busqueda : "spiderman"
+      busqueda  ? busqueda : "spiderman"
 
     api.get(`&s=${busquedaRealizada}`)
       .then((res) => {

@@ -1,0 +1,13 @@
+.DivLoader {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.6);
+}
+
+p {
+  color: white;
+  font-size: 18px;
+}
