@@ -46,17 +46,19 @@ function App() {
       {loading && <Loading />}
     {error && <ErrorMessage mensaje={error} />}
 
-      {!peliculaElegida ? (
-        <MovieList
-          peliculas={peliculas}
-          onSelect={handleSelectMovie}
-        />
-      ) : (
-        <MovieDetails
-          pelicula={peliculaElegida}
-          setPeliculaElegida={setPeliculaElegida}
-        />
-      )}
+   {!peliculaElegida && !loading && (
+  <MovieList
+    peliculas={peliculas}
+    onSelect={handleSelectMovie}
+  />
+)}
+
+{peliculaElegida && (
+  <MovieDetails
+    pelicula={peliculaElegida}
+    setPeliculaElegida={setPeliculaElegida}
+  />
+)}
     </>
   )
 }
