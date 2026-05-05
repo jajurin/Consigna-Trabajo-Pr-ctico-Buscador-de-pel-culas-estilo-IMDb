@@ -32,22 +32,28 @@ function App() {
       .then((res) => setPeliculaElegida(res.data))
   }
 
-  return (
-    <>
-      {!peliculaElegida && (
-        <SearchBar busqueda={busqueda} setBusqueda={setBusqueda} />
-      )}
+return (
+  <>
+    {!peliculaElegida && (
+      <SearchBar busqueda={busqueda} setBusqueda={setBusqueda} />
+    )}
 
+    {loading && <p>Cargando...</p>}
+    {error && <p>{error}</p>}
+
+    {!peliculaElegida ? (
       <MovieList
         peliculas={peliculas}
-        loading={loading}
-        error={error}
-        peliculaElegida={peliculaElegida}
-        setPeliculaElegida={setPeliculaElegida}
         onSelect={handleSelectMovie}
       />
-    </>
-  )
+    ) : (
+      <MovieDetails
+        pelicula={peliculaElegida}
+        setPeliculaElegida={setPeliculaElegida}
+      />
+    )}
+  </>
+)
 }
 
 export default App
