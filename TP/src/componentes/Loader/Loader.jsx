@@ -1,0 +1,14 @@
+import "./Loader.css";
+
+function Loading(){
+ 
+ return( <div> 
+    <p>Cargando...</p> 
+    </div> )
+
+ 
+
+     
+}
+
+export default Loading

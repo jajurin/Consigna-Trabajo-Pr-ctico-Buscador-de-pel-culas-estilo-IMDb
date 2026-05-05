@@ -1,9 +1,12 @@
 import { useEffect, useState } from "react"
 import MovieList from "./componentes/MovieList/MovieList"
-import SearchBar from "./componentes/SearchBar"
+import SearchBar from "./componentes/SearchBar/SearchBar"
 import api from "./componentes/api"
-import MovieDetails from "./componentes/MovieDetails"
+import MovieDetails from "./componentes/movieDetails/MovieDetails"
+import Loading from "./componentes/Loader/Loader"
+import ErrorMessage from "./componentes/ErrorMessage"
 import "./App.css";
+
 function App() {
   const [busqueda, setBusqueda] = useState("")
   const [peliculas, setPeliculas] = useState([])
@@ -15,7 +18,8 @@ function App() {
     setLoading(true)
     setError(null)
 
-    const busquedaRealizada = busqueda && busqueda.length > 2 ? busqueda : "spiderman"
+    const busquedaRealizada =
+      busqueda && busqueda.length > 2 ? busqueda : "spiderman"
 
     api.get(`&s=${busquedaRealizada}`)
       .then((res) => {
@@ -33,30 +37,28 @@ function App() {
       .then((res) => setPeliculaElegida(res.data))
   }
 
-return (
-  <main>
+  return (
+    <>
+      {!peliculaElegida && (
+        <SearchBar busqueda={busqueda} setBusqueda={setBusqueda} />
+      )}
 
-    {!peliculaElegida && (
-      <SearchBar busqueda={busqueda} setBusqueda={setBusqueda} />
-    )}
+      {loading && <Loading />}
+    {error && <ErrorMessage mensaje={error} />}
 
-    {loading && <p>Cargando...</p>}
-    {error && <p>{error}</p>}
-
-    {!peliculaElegida ? (
-      <MovieList
-        peliculas={peliculas}
-        onSelect={handleSelectMovie}
-      />
-    ) : (
-      <MovieDetails
-        pelicula={peliculaElegida}
-        setPeliculaElegida={setPeliculaElegida}
-      />
-    )}
-
-  </main>
-)
+      {!peliculaElegida ? (
+        <MovieList
+          peliculas={peliculas}
+          onSelect={handleSelectMovie}
+        />
+      ) : (
+        <MovieDetails
+          pelicula={peliculaElegida}
+          setPeliculaElegida={setPeliculaElegida}
+        />
+      )}
+    </>
+  )
 }
 
 export default App

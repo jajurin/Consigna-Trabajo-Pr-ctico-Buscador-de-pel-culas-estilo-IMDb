@@ -1,36 +1,46 @@
 li {
-  list-style: none;
-  width: 180px;
-  background: rgba(20, 20, 20, 0.85);
-  border-radius: 12px;
+  width: 260px;
+  background: rgba(20, 20, 20, 0.75); /* vidrio oscuro */
+  border-radius: 16px;
   overflow: hidden;
   cursor: pointer;
 
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.6);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
 
+  /* efecto “cine lujo” */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
   backdrop-filter: blur(6px);
-  border: 1px solid rgba(255, 0, 0, 0.15);
-}
 
-li img {
-  width: 100%;
-  height: 260px;
-  object-fit: cover;
-  display: block;
-}
-
-li strong {
-  display: block;
-  padding: 10px;
-  font-size: 14px;
-  color: #f5f5f5;
-  text-align: center;
-  background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+  display: flex;
+  flex-direction: column;
 }
 
 li:hover {
-  transform: scale(1.05);
-  box-shadow: 0 15px 35px rgba(255, 0, 0, 0.25);
-  border-color: rgba(255, 0, 0, 0.4);
+  transform: translateY(-8px) scale(1.03);
+  box-shadow: 0 15px 40px rgba(255, 0, 0, 0.25);
+  border: 1px solid rgba(255, 0, 0, 0.4);
+}
+
+img {
+  width: 100%;
+  height: 380px; /* más grandes tipo cartelera */
+  object-fit: cover;
+}
+
+strong {
+  padding: 12px;
+  color: #f5f5f5;
+  font-size: 15px;
+  text-align: center;
+  letter-spacing: 0.5px;
+}
+
+/* opcional: pequeño brillo rojo abajo */
+li::after {
+  content: "";
+  height: 4px;
+  width: 100%;
+  background: linear-gradient(90deg, transparent, red, transparent);
+  display: block;
+  opacity: 0.4;
 }

@@ -1,8 +1,12 @@
 ul {
-  display: flex;
-  flex-direction: row;
-  gap: 16px;
-  flex-wrap: wrap; /* opcional: baja a otra fila si no entra */
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 30px;
+  padding: 40px;
   list-style: none;
-  padding: 0;
+  margin: 0;
+
+
+  background: transparent;
+  justify-items: center;
 }

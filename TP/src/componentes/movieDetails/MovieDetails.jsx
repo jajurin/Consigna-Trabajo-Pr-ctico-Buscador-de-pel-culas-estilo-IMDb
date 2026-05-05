@@ -1,10 +1,10 @@
-
+import "./MovieDetails.css";
     function MovieDetails({ pelicula, setPeliculaElegida }) {
 
     return (
           <div>
       <button onClick={() => setPeliculaElegida(null)}>
-        ← Volver
+        Volver
       </button>
       <li>
       <strong>
