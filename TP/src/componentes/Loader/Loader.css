@@ -4,10 +4,15 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background: rgba(0, 0, 0, 0.6);
+  background: rgba(0, 0, 0, 0.75);
 }
 
-p {
-  color: white;
-  font-size: 18px;
+/* animación al texto */
+.DivLoader p {
+  color: #ffee00;
+  font-size: 20px;
+
 }
+
+
+

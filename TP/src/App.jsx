@@ -4,7 +4,7 @@ import SearchBar from "./componentes/SearchBar/SearchBar"
 import api from "./componentes/api"
 import MovieDetails from "./componentes/movieDetails/MovieDetails"
 import Loading from "./componentes/Loader/Loader"
-import ErrorMessage from "./componentes/ErrorMessage"
+import ErrorMessage from "./componentes/ErrorMessage/ErrorMessage"
 import "./App.css";
 
 function App() {
@@ -37,30 +37,35 @@ function App() {
       .then((res) => setPeliculaElegida(res.data))
   }
 
-  return (
-    <>
-      {!peliculaElegida && (
-        <SearchBar busqueda={busqueda} setBusqueda={setBusqueda} />
-      )}
+return (
+  <>
+    {!peliculaElegida && (
+      <SearchBar setBusqueda={setBusqueda} />
+    )}
 
-      {loading && <Loading />}
+    {loading && <Loading />}
+
     {error && <ErrorMessage mensaje={error} />}
 
-   {!peliculaElegida && !loading && (
-  <MovieList
-    peliculas={peliculas}
-    onSelect={handleSelectMovie}
-  />
-)}
+    { !loading &&   peliculas.length === 0 && (
+    <ErrorMessage mensjae="No se encontraron peliculas" /> //no lo podemos setear aca
+    )}
 
-{peliculaElegida && (
-  <MovieDetails
-    pelicula={peliculaElegida}
-    setPeliculaElegida={setPeliculaElegida}
-  />
-)}
-    </>
-  )
+    {!peliculaElegida && !loading && !error && peliculas.length > 0 && (
+      <MovieList
+        peliculas={peliculas}
+        onSelect={handleSelectMovie}
+      />
+    )}
+
+    {peliculaElegida && (
+      <MovieDetails
+        pelicula={peliculaElegida}
+        setPeliculaElegida={setPeliculaElegida}
+      />
+    )}
+  </>
+)
 }
 
 export default App
