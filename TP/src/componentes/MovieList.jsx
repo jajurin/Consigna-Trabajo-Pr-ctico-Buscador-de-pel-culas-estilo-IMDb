@@ -1,3 +1,5 @@
+import MovieCard from "./MovieCard"
+
 function MovieList({ peliculas, onSelect }) {
   return (
     <ul>

@@ -34,6 +34,7 @@ function App() {
 
 return (
   <>
+
     {!peliculaElegida && (
       <SearchBar busqueda={busqueda} setBusqueda={setBusqueda} />
     )}
@@ -41,7 +42,7 @@ return (
     {loading && <p>Cargando...</p>}
     {error && <p>{error}</p>}
 
-    {!peliculaElegida ? (
+    {!peliculaElegida ? (  
       <MovieList
         peliculas={peliculas}
         onSelect={handleSelectMovie}
