@@ -1,5 +1,12 @@
 import "./MovieDetails.css";
+import placeholder from "../../assets/6605525.jpg";
+
     function MovieDetails({ pelicula, setPeliculaElegida }) {
+
+    let img = pelicula.Poster;
+    if (!pelicula.Poster || pelicula.Poster === "N/A") {
+      img = placeholder;
+    }
 
     return (
           <div>
@@ -11,7 +18,7 @@ import "./MovieDetails.css";
         {pelicula.Title} ({pelicula.Year})
       </strong>
 
-      <img src={pelicula.Poster} alt={pelicula.Title} />
+      <img src={img} alt={pelicula.Title} onError={(e) => (e.target.src = placeholder)} />
 
       <p><b>Género:</b> {pelicula.Genre}</p>
       <p><b>Director:</b> {pelicula.Director}</p>
