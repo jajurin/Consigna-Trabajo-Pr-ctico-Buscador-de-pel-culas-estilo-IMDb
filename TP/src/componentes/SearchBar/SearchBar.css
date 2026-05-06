@@ -1,35 +1,26 @@
 input {
   width: 100%;
-  max-width: 500px;
-
-  padding: 12px 16px;
-  margin: 20px auto;
-
+  max-width: 30% ;
+  padding: 0.7% 1%; 
+  margin: 1% auto; 
   display: block;
-
   border: 1px solid rgba(255, 255, 255, 0.15);
   border-radius: 10px;
-
   background: rgba(20, 20, 20, 0.8);
   color: white;
-
   font-size: 15px;
   outline: none;
-
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
-
   transition: all 0.2s ease;
 }
 
-/* placeholder */
 input::placeholder {
   color: rgba(173, 23, 23, 0.692);
 }
 
-/* focus estilo glow */
 input:focus {
-  border-color: #ffcc00;
-  box-shadow: 0 0 12px rgba(255, 204, 0, 0.4);
+  border-color: #7e1511;
+  box-shadow: 0 0 12px rgba(238, 58, 45, 0.4);
   background: rgba(30, 30, 30, 0.9);
-  transform: scale(1.02);
+ 
 }
