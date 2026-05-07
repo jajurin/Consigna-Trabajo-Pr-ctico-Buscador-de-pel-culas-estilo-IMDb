@@ -1,12 +1,12 @@
 import "./MovieDetails.css";
-import placeholder from "../../assets/6605525.jpg";
+import imagenRota from "../../assets/6605525.jpg";
 
 function MovieDetails({ pelicula, setPeliculaElegida }) {
 
   let img = pelicula.Poster;
 
   if (!pelicula.Poster || pelicula.Poster === "N/A") {
-    img = placeholder;
+    img = imagenRota;
   }
 
   return (

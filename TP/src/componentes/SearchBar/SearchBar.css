@@ -1,9 +1,14 @@
+form {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin: 1% auto;
+}
+
 input {
   width: 100%;
-  max-width: 30% ;
-  padding: 0.7% 1%; 
-  margin: 1% auto; 
-  display: block;
+  max-width: 30%;
+  padding: 0.7% 1%;
   border: 1px solid rgba(255, 255, 255, 0.15);
   border-radius: 10px;
   background: rgba(20, 20, 20, 0.8);
@@ -21,5 +26,4 @@ input:hover {
   border-color: #7e1511;
   box-shadow: 0 0 12px rgba(238, 58, 45, 0.4);
   background: rgba(30, 30, 30, 0.9);
- 
 }
