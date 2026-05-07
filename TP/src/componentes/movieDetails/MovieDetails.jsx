@@ -27,7 +27,7 @@ function MovieDetails({ pelicula, setPeliculaElegida }) {
         <img
           src={img}
           alt={pelicula.Title}
-          onError={(e) => (e.target.src = placeholder)}
+          onError={(e) => (e.target.src = imagenRota)}
         />
 
         <p><b>Género:</b> {pelicula.Genre}</p>
