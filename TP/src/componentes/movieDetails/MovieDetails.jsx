@@ -12,8 +12,7 @@ function MovieDetails({ pelicula, setPeliculaElegida }) {
   return (
     <div className="details">
 
-      <button
-        className="volver"
+      <button className="volver"
         onClick={() => setPeliculaElegida(null)}
       >
         Volver
