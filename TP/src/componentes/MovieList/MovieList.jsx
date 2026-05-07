@@ -1,8 +1,15 @@
 import MovieCard from "../MovieCard/MovieCard"
 import "./MovieList.css";
 
-function MovieList({ peliculas, onSelect }) {
+function MovieList({ peliculas, onSelect ,  setBusqueda}) {
+  
   return (
+    <div>
+     <button className="volver"
+        onClick={() => setBusqueda("")}
+      >
+        HOME
+      </button>
     <ul>
       {peliculas.map((p) => (
         <MovieCard
@@ -12,6 +19,7 @@ function MovieList({ peliculas, onSelect }) {
         />
       ))}
     </ul>
+    </div>
   );
 }
 

@@ -57,13 +57,15 @@ return (
     {error && <ErrorMessage mensaje={error} />}
 
     { !loading &&   peliculas.length === 0 && (
-    <ErrorMessage mensjae="No se encontraron peliculas" /> //no lo podemos setear aca
+    <ErrorMessage mensjae="No se encontraron peliculas" setBusqueda={setBusqueda}/> //no lo podemos setear aca
     )}
 
     {!peliculaElegida && !loading && !error && peliculas.length > 0 && (
       <MovieList
         peliculas={peliculas}
         onSelect={handleSelectMovie}
+        setPeliculaElegida={setPeliculaElegida}
+       setBusqueda={setBusqueda}
       />
     )}
 
