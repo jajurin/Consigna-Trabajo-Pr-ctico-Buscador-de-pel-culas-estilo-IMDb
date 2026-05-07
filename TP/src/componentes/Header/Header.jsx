@@ -27,9 +27,9 @@ function Header() {
             alt="..."
             style={{
               height: "370px",
-      width: "70%",
-      margin: "0 auto",
-      borderRadius: "12px"
+              width: "70%",
+              margin: "0 auto",
+              borderRadius: "12px"
             }}
           />
         </div>
@@ -40,12 +40,11 @@ function Header() {
             className="d-block w-50"
             alt="..."
             style={{
-            height: "370px",
-      width: "70%",
-      objectFit: "cover",
-
-      margin: "0 auto",
-      borderRadius: "12px"
+              height: "370px",
+              width: "70%",
+              objectFit: "cover",
+              margin: "0 auto",
+              borderRadius: "12px"
             }}
           />
         </div>
@@ -59,7 +58,7 @@ function Header() {
         data-bs-slide="prev"
         style={{
           width: "60px",
-           marginLeft: "20%",
+          marginLeft: "20%",
           hover: {
             background: "rgba(0, 0, 0, 0.5)"
           }
@@ -83,7 +82,7 @@ function Header() {
         style={{
           width: "60px",
           marginRight: "20%"
-    
+
         }}
       >
         <span
