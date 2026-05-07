@@ -1,5 +1,5 @@
 import "./MovieDetails.css";
-import imagenRota from "../../assets/6605525.jpg";
+import imagenRota from "../../assets/6605525.jpg"; 
 
 function MovieDetails({ pelicula, setPeliculaElegida }) {
 
