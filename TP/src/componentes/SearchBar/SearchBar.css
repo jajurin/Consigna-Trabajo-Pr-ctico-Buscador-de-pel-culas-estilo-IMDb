@@ -17,7 +17,7 @@ input::placeholder {
   color: rgba(173, 23, 23, 0.692);
 }
 
-input:focus {
+input:hover {
   border-color: #7e1511;
   box-shadow: 0 0 12px rgba(238, 58, 45, 0.4);
   background: rgba(30, 30, 30, 0.9);

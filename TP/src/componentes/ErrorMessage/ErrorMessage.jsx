@@ -1,6 +1,7 @@
+import './ErrorMessage.css'
 function ErrorMessage({ mensjae }) {
   return (
-    <div style={{ color: "red" }}>
+    <div className="errorMessage">
       {mensjae}
     </div>
   )

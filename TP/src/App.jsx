@@ -5,6 +5,7 @@ import api from "./componentes/api"
 import MovieDetails from "./componentes/movieDetails/MovieDetails"
 import Loading from "./componentes/Loader/Loader"
 import ErrorMessage from "./componentes/ErrorMessage/ErrorMessage"
+import Header from "./componentes/Header/Header"
 import "./App.css";
 
 function App() {
@@ -39,10 +40,18 @@ function App() {
 
 return (
   <>
-    {!peliculaElegida && (
-      <SearchBar setBusqueda={setBusqueda} />
-    )}
+ {!peliculaElegida && (
+  <>
+    <SearchBar setBusqueda={setBusqueda} />
 
+  </>
+)}
+ {!peliculaElegida && !busqueda && !error && (
+  <>
+    <Header />
+
+  </>
+)}
     {loading && <Loading />}
 
     {error && <ErrorMessage mensaje={error} />}
