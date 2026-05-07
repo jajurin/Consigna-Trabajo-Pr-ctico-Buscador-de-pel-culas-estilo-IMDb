@@ -26,7 +26,7 @@ function Header() {
             className="d-block w-50"
             alt="..."
             style={{
-              height: "300px",
+              height: "370px",
       width: "70%",
       margin: "0 auto",
       borderRadius: "12px"
@@ -40,7 +40,7 @@ function Header() {
             className="d-block w-50"
             alt="..."
             style={{
-            height: "300px",
+            height: "370px",
       width: "70%",
       objectFit: "cover",
 
